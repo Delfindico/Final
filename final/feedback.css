@@ -1,0 +1,291 @@
+.feedback-content {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.feedback-heading {
+    display: flex;
+    min-height: 53px;
+    align-items: center;
+    gap: 12px;
+    align-self: center;
+    margin: 0;
+    padding: 5px 18px 6px 12px;
+    border-radius: 40px;
+    background: #210f1a;
+    color: #fff;
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.feedback-star {
+    color: #d7ed24;
+    font-size: 2rem;
+    text-shadow: 1px 2px #4bd7e0;
+}
+
+.feedback-brand {
+    background: linear-gradient(90deg, #d68de2, #079bea);
+    background-clip: text;
+    color: transparent;
+}
+
+.feedback-panel {
+    display: flex;
+    min-height: calc(100vh - 155px);
+    flex: 1;
+    flex-direction: column;
+    padding: clamp(22px, 4vw, 58px) clamp(20px, 3.2vw, 42px) 25px;
+    border: 1px solid #171529;
+    border-radius: 78px;
+    background: #f7e0f5;
+}
+
+.review-list {
+    display: grid;
+    align-content: start;
+    gap: 20px;
+}
+
+.review {
+    display: grid;
+    grid-template-columns: 82px minmax(0, 1fr);
+    align-items: start;
+    gap: 14px;
+}
+
+.review-avatar,
+.review-photo {
+    display: grid;
+    width: 82px;
+    height: 82px;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 12px;
+    font-size: 3.4rem;
+}
+
+.review-avatar--fox {
+    background: #e6de08;
+}
+
+.review-avatar--lion {
+    background: #ee9b5b;
+}
+
+.review-photo {
+    object-fit: cover;
+}
+
+.review-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.review-card {
+    width: fit-content;
+    min-width: min(265px, 100%);
+    max-width: 100%;
+    min-height: 82px;
+    padding: 5px 17px 10px;
+    border-radius: 40px;
+    background: #fff;
+    color: #090909;
+}
+
+.review-rating {
+    display: block;
+    font-size: 2.2rem;
+    line-height: 1.1;
+}
+
+.review-card p {
+    margin: 3px 0 0;
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.review-card--long {
+    width: 100%;
+    border-radius: 36px;
+    padding: 5px 22px 10px;
+}
+
+.review-card--long p {
+    margin-top: 5px;
+}
+
+.feedback-cta,
+.feedback-submit,
+.feedback-cancel {
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 800;
+}
+
+.feedback-cta {
+    width: 100%;
+    min-height: 55px;
+    margin-top: auto;
+    padding: 12px 20px;
+    border-radius: 20px;
+    background: #35c9d4;
+    color: #080808;
+    font-size: 1.25rem;
+}
+
+.feedback-cta:hover,
+.feedback-cta:focus-visible {
+    background: #24b9c5;
+}
+
+.feedback-form {
+    display: grid;
+    gap: 8px;
+    margin: 18px 0;
+    padding: 18px;
+    border-radius: 22px;
+    background: #fff;
+}
+
+.feedback-form[hidden] {
+    display: none;
+}
+
+.feedback-form h2 {
+    margin: 0 0 4px;
+    font-size: 1.2rem;
+}
+
+.feedback-form label {
+    font-weight: 700;
+}
+
+.feedback-name-note {
+    margin-top: -4px;
+    color: #5e5668;
+    font-size: 0.9rem;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #a48da6;
+    border-radius: 10px;
+    background: #fff;
+    color: #171529;
+    font: inherit;
+}
+
+.feedback-form input[readonly] {
+    background: #f0edf0;
+    color: #5e5668;
+    cursor: not-allowed;
+}
+
+.feedback-form textarea {
+    resize: vertical;
+}
+
+.feedback-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.feedback-submit,
+.feedback-cancel {
+    padding: 10px 16px;
+    border-radius: 14px;
+}
+
+.feedback-submit {
+    background: #35c9d4;
+    color: #080808;
+}
+
+.feedback-cancel {
+    background: #e8e2e8;
+    color: #171529;
+}
+
+.feedback-status {
+    margin: 10px 0;
+    color: #29233a;
+}
+
+.feedback-status:empty {
+    display: none;
+}
+
+@media (max-width: 760px) {
+    .feedback-content {
+        gap: 10px;
+    }
+
+    .feedback-heading {
+        align-self: stretch;
+        justify-content: center;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .feedback-panel {
+        min-height: 70vh;
+        padding: 20px 16px;
+        border-radius: 40px;
+    }
+
+    .review-list {
+        gap: 14px;
+    }
+
+    .review {
+        grid-template-columns: 54px minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .review-avatar,
+    .review-photo {
+        width: 54px;
+        height: 54px;
+        border-radius: 10px;
+        font-size: 2.4rem;
+    }
+
+    .review-card {
+        min-width: 0;
+        min-height: 54px;
+        padding: 5px 12px 9px;
+    }
+
+    .review-rating {
+        font-size: 1.8rem;
+    }
+
+    .review-card--long {
+        border-radius: 25px;
+        padding: 8px 14px 12px;
+    }
+
+    .feedback-cta {
+        margin-top: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .feedback-cta,
+    .feedback-submit,
+    .feedback-cancel {
+        scroll-behavior: auto;
+    }
+}

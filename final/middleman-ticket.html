@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d68de2">
+    <title>Middleman Deal | MidLink</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="burger.css">
+    <link rel="stylesheet" href="middleman-ticket.css">
+</head>
+<body>
+    <button class="menu-toggle" type="button" aria-label="Hide sidebar" aria-controls="sidebar" aria-expanded="true">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <main class="dashboard" id="dashboard">
+        <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+            <div class="profile">
+                <img src="anya.webp" alt="Anya Forger profile picture">
+                <span class="profile-name">Anya Forger</span>
+            </div>
+            <nav aria-label="Dashboard">
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="dashboard.html"><span class="nav-icon" aria-hidden="true">⌂</span><span>Home</span></a></li>
+                    <li><a class="nav-link" href="rules.html"><span class="nav-icon" aria-hidden="true">ⓘ</span><span>Rules!</span></a></li>
+                    <li><a class="nav-link" href="support.html"><span class="nav-icon" aria-hidden="true">?</span><span>Support</span></a></li>
+                    <li>
+                        <a class="nav-link nav-link--messages" href="#messages"><span class="nav-icon" aria-hidden="true">◉</span><span>Messages</span></a>
+                        <div class="subnav"><a href="chat.html">Chats</a><a href="globalchat.html">Global chat</a></div>
+                    </li>
+                    <li><a class="nav-link nav-link--current" href="midleman.html" aria-current="page"><span class="nav-icon" aria-hidden="true">◆</span><span>Middleman request</span></a></li>
+                    <li class="nav-link--footer"><a class="nav-link" href="completed.html"><span class="nav-icon" aria-hidden="true">✓</span><span>Completed</span></a></li>
+                    <li><a class="nav-link" href="feedback.html"><span class="nav-icon" aria-hidden="true">♡</span><span>Feedback</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="welcome-card middleman-ticket-card" aria-labelledby="ticket-title">
+            <header class="ticket-header">
+                <img class="brand-logo" src="logo2.png" alt="MidLink">
+                <div class="ticket-heading">
+                    <p class="ticket-eyebrow">SECURE DEAL ROOM</p>
+                    <h1 id="ticket-title">MidLink Middleman System</h1>
+                    <p class="ticket-subtitle">Coordinate your deal with a MidLink middleman.</p>
+                    <p class="ticket-number">Ticket ID: <strong id="ticket-id">Loading…</strong></p>
+                </div>
+                <button class="close-ticket" id="close-ticket" type="button">Close ticket</button>
+            </header>
+
+            <div class="ticket-reminders" role="note">
+                <p><span class="reminder-icon" aria-hidden="true">!</span><strong>Safety reminder</strong></p>
+                <p>Never share your password or recovery phrase. Verify all deal details with the other member before sending cryptocurrency.</p>
+                <p class="timeout-reminder">Please respond within 15 minutes or this ticket may be closed due to inactivity.</p>
+            </div>
+
+            <section class="deal-details" aria-labelledby="selected-coin-title">
+                <h2 id="selected-coin-title">Selected cryptocurrency</h2>
+                <div class="selected-coin">
+                    <span class="coin-icon" id="coin-icon" aria-hidden="true"></span>
+                    <div>
+                        <p class="selected-coin-name" id="selected-coin-name">Loading coin…</p>
+                        <p class="selected-network" id="selected-network"></p>
+                    </div>
+                </div>
+            </section>
+
+            <form class="member-form" id="member-form">
+                <label for="member-name">Who are you dealing with?</label>
+                <p class="member-help">Select a member if available, or enter their username.</p>
+                <div class="member-controls">
+                    <select id="member-choice" aria-label="Member selection">
+                        <option value="">Select member</option>
+                        <option value="manual">Enter username manually</option>
+                    </select>
+                    <input id="member-name" name="member" type="text" maxlength="40" autocomplete="off" placeholder="Type their username" required>
+                </div>
+                <p class="directory-note">Member lookup is not connected yet. You can enter the username directly.</p>
+                <button class="submit-request" type="submit">Submit</button>
+                <p class="request-status" id="request-status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+    <script src="account-store.js"></script>
+    <script src="burger.js"></script>
+    <script src="middleman-ticket.js"></script>
+</body>
+</html>

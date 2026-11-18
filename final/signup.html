@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="auth-box signup-box">
+        <h2>Create Account</h2>
+
+        <form id="signup-form" method="post" action="signup.php" novalidate>
+            <div class="field-group">
+                <label for="fullname">Full name:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" aria-describedby="fullname-error" minlength="2" maxlength="50" required>
+                <p id="fullname-error" class="message" role="alert" hidden></p>
+            </div>
+
+            <div class="field-group">
+                <label for="phone">Phone number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" aria-describedby="phone-error" inputmode="numeric" minlength="11" maxlength="11" required>
+                <p id="phone-error" class="message" role="alert" hidden></p>
+            </div>
+
+            <div class="field-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" aria-describedby="email-error" required>
+                <p id="email-error" class="message" role="alert" hidden></p>
+            </div>
+
+            <div class="field-group">
+                <label for="password">Password:</label>
+                <div class="password-toggle-wrap">
+                    <input type="password" id="password" name="password" placeholder="Create a password" aria-describedby="password-error" minlength="8" maxlength="64" required>
+                    <button type="button" class="password-toggle" aria-label="Show password" aria-pressed="false"></button>
+                </div>
+                <p id="password-error" class="message" role="alert" hidden></p>
+            </div>
+
+            <div class="field-group">
+                <label for="confirm-password">Confirm password:</label>
+                <div class="password-toggle-wrap">
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" aria-describedby="confirm-password-error" required>
+                    <button type="button" class="password-toggle" aria-label="Show password" aria-pressed="false"></button>
+                </div>
+                <p id="confirm-password-error" class="message" role="alert" hidden></p>
+            </div>
+
+            <input type="submit" value="Sign Up">
+
+            <p class="account-text">Already have an account? <a href="index.html" class="login-link">Login</a></p>
+        </form>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+</html>

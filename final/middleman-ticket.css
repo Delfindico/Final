@@ -1,0 +1,307 @@
+.middleman-ticket-card {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 3vw, 34px);
+    padding: 28px clamp(24px, 4vw, 58px) 42px;
+    border-radius: 58px;
+    background:
+        radial-gradient(ellipse at 92% 8%, rgba(255, 255, 255, 0.62), transparent 34%),
+        linear-gradient(145deg, #f8e6f8, #f0d7f0);
+}
+
+.ticket-header {
+    display: grid;
+    grid-template-columns: 132px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 20px;
+}
+
+.ticket-header .brand-logo {
+    width: 130px;
+    height: 100px;
+    margin: 0;
+}
+
+.ticket-heading .ticket-eyebrow {
+    margin: 0 0 6px;
+    color: #70517b;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.ticket-heading h1 {
+    margin: 0;
+    color: #282038;
+    font-size: clamp(1.55rem, 3vw, 2.45rem);
+    line-height: 1.1;
+}
+
+.ticket-heading .ticket-subtitle {
+    margin: 9px 0 0;
+    color: #5d5364;
+    font-size: 1rem;
+}
+
+.ticket-heading .ticket-number {
+    margin-top: 8px;
+    color: #70389b;
+    font-size: 0.9rem;
+}
+
+.ticket-number strong {
+    letter-spacing: 0.04em;
+}
+
+.close-ticket,
+.submit-request {
+    min-height: 44px;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 24px;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    transition: filter 140ms ease, transform 140ms ease;
+}
+
+.close-ticket {
+    background: #d84c67;
+}
+
+.submit-request {
+    min-width: 150px;
+    margin-top: 20px;
+    background: #7a3daf;
+}
+
+.close-ticket:hover,
+.close-ticket:focus-visible,
+.submit-request:hover,
+.submit-request:focus-visible {
+    filter: brightness(0.92);
+}
+
+.close-ticket:active,
+.submit-request:active {
+    transform: scale(0.98);
+}
+
+.ticket-reminders {
+    max-width: 880px;
+    padding: 18px 22px;
+    border: 1px solid #e2a861;
+    border-radius: 18px;
+    background: #fff5df;
+    color: #493c31;
+    line-height: 1.5;
+}
+
+.ticket-reminders p {
+    margin: 0;
+}
+
+.ticket-reminders > p:first-child {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 7px;
+    color: #8d5215;
+}
+
+.reminder-icon {
+    display: inline-grid;
+    width: 22px;
+    height: 22px;
+    place-items: center;
+    border-radius: 50%;
+    background: #e7a03b;
+    color: #fff;
+    font-weight: 800;
+}
+
+.ticket-reminders .timeout-reminder {
+    margin-top: 10px;
+    color: #a53d50;
+    font-weight: 700;
+}
+
+.deal-details {
+    max-width: 880px;
+}
+
+.deal-details h2 {
+    margin: 0 0 12px;
+    color: #332740;
+    font-size: 1.1rem;
+}
+
+.selected-coin {
+    display: flex;
+    min-height: 78px;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 18px;
+    border: 1px solid rgba(89, 58, 112, 0.18);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.68);
+}
+
+.selected-coin .coin-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    place-items: center;
+    border-radius: 50%;
+    background: #6b5b95;
+    color: #fff;
+    font-size: 1.65rem;
+    font-weight: 700;
+}
+
+.selected-coin .coin-icon--btc {
+    background: #f5a623;
+}
+
+.selected-coin .coin-icon--usdt {
+    background: #26a17b;
+}
+
+.selected-coin .coin-icon--sol {
+    background: #24202f;
+}
+
+.selected-coin .coin-icon--eth {
+    background: #5263a8;
+}
+
+.selected-coin-name {
+    margin: 0;
+    color: #30243d;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.selected-network {
+    margin: 4px 0 0;
+    color: #655b6c;
+}
+
+.member-form {
+    width: min(100%, 880px);
+    padding-top: 2px;
+}
+
+.member-form > label {
+    display: block;
+    color: #30243d;
+    font-size: 1.12rem;
+    font-weight: 800;
+}
+
+.member-help,
+.directory-note {
+    margin: 7px 0 12px;
+    color: #655b6c;
+    line-height: 1.45;
+}
+
+.member-controls {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.8fr) minmax(220px, 1.2fr);
+    gap: 12px;
+}
+
+.member-controls select,
+.member-controls input {
+    width: 100%;
+    min-height: 48px;
+    padding: 10px 14px;
+    border: 1px solid #9a7cac;
+    border-radius: 12px;
+    background: #fff;
+    color: #292137;
+    font: inherit;
+}
+
+.member-controls input::placeholder {
+    color: #80788a;
+}
+
+.member-controls select:focus-visible,
+.member-controls input:focus-visible {
+    outline: 3px solid #9070d8;
+    outline-offset: 2px;
+}
+
+.directory-note {
+    margin-bottom: 0;
+    font-size: 0.88rem;
+}
+
+.request-status {
+    min-height: 1.5em;
+    margin: 12px 0 0;
+    color: #38264b;
+    font-weight: 700;
+}
+
+.request-status[data-error="true"] {
+    color: #a2253e;
+}
+
+@media (max-width: 920px) {
+    .ticket-header {
+        grid-template-columns: 100px minmax(0, 1fr);
+    }
+
+    .ticket-header .brand-logo {
+        width: 100px;
+        height: 82px;
+    }
+
+    .close-ticket {
+        grid-column: 2;
+        justify-self: start;
+    }
+}
+
+@media (max-width: 760px) {
+    .middleman-ticket-card {
+        gap: 22px;
+        padding: 20px;
+        border-radius: 38px;
+    }
+
+    .ticket-header {
+        grid-template-columns: 70px minmax(0, 1fr);
+        gap: 13px;
+    }
+
+    .ticket-header .brand-logo {
+        width: 70px;
+        height: 68px;
+    }
+
+    .ticket-heading h1 {
+        font-size: 1.45rem;
+    }
+
+    .ticket-heading .ticket-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .close-ticket {
+        grid-column: 1 / -1;
+    }
+
+    .ticket-reminders {
+        padding: 15px;
+    }
+
+    .member-controls {
+        grid-template-columns: 1fr;
+    }
+}

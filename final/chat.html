@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d68de2">
+    <title>MidLink Chats</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+    <main class="messages-app">
+        <aside class="chat-sidebar" id="chats" aria-label="Chats">
+            <a class="back-link" href="dashboard.html" aria-label="Back to dashboard">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2Z"/></svg>
+            </a>
+            <h1 class="chats-title">Chats</h1>
+            <label class="search-box">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3a7 7 0 1 0 4.9 12l5.55 5.55 1.41-1.41L16.3 13.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm-4 0v2h5V5H6Zm0 4v2h3V9H6Z"/></svg>
+                <input id="chat-search" type="search" placeholder="Search chats" aria-label="Search chats">
+            </label>
+            <div class="chat-filters" role="group" aria-label="Filter chats">
+                <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+                <button class="filter-button" type="button" data-filter="friends" aria-pressed="false">Friends</button>
+                <button class="filter-button" type="button" data-filter="pending" aria-pressed="false">Pending</button>
+                <button class="filter-button add-friend-button" id="add-friend" type="button">Add friend</button>
+            </div>
+            <ul class="chat-list" id="chat-list" aria-label="Conversation list"></ul>
+        </aside>
+
+        <section class="conversation" aria-label="Conversation">
+            <header class="conversation-header">
+                <div class="header-person" id="header-person"></div>
+                <div class="header-actions">
+                    <button class="icon-button" type="button" data-call="video" aria-label="Start video call">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h13a2 2 0 0 1 2 2v2.2l3-2.1v9.8l-3-2.1V17a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v10h13V7H3Z"/></svg>
+                    </button>
+                    <button class="icon-button" type="button" data-call="voice" aria-label="Start voice call">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.56 3.57.56.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.19 2.45.56 3.57.11.35.02.74-.25 1.02l-2.19 2.2Z"/></svg>
+                    </button>
+                    <button class="icon-button" type="button" id="chat-info" aria-label="Conversation information">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.66 15l-1.1 4.02 4.03-1.08A10 10 0 1 0 12 2Zm1 15h-2v-2h2v2Zm0-4h-2V7h2v6Z"/></svg>
+                    </button>
+                </div>
+            </header>
+            <div class="message-area" id="message-area" aria-live="polite"></div>
+            <form class="message-form" id="message-form">
+                <label class="visually-hidden" for="message-input">Write a message</label>
+                <input id="message-input" name="message" type="text" maxlength="1000" placeholder="Write a message..." autocomplete="off" required>
+                <button class="send-button" type="submit" aria-label="Send message">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21 23 12 2 3v7l15 2-15 2v7Z"/></svg>
+                </button>
+            </form>
+            <p class="chat-notice" id="chat-notice" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+    <script src="chat.js"></script>
+</body>
+</html>

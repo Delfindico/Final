@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <main class="login-card">
+        <section class="login-art" aria-label="MidLink marketplace illustration">
+            <img src="mid.png" alt="MidLink buyer and seller illustration">
+        </section>
+
+        <section class="login-content">
+            <img class="brand-logo" src="logo2.png" alt="MidLink">
+
+            <form id="login-form" method="post" action="login.php" novalidate>
+                <div class="field-group">
+                    <label class="visually-hidden" for="email">Email</label>
+                    <span class="input-icon input-icon--email" aria-hidden="true"></span>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" aria-describedby="email-error" autocomplete="email" required>
+                    <p id="email-error" class="message" role="alert" hidden></p>
+                </div>
+
+                <div class="field-group">
+                    <label class="visually-hidden" for="password">Password</label>
+                    <div class="password-toggle-wrap">
+                        <span class="input-icon input-icon--password" aria-hidden="true"></span>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" aria-describedby="password-error" autocomplete="current-password" minlength="8" maxlength="64" required>
+                        <button type="button" class="password-toggle" aria-label="Show password" aria-pressed="false"></button>
+                    </div>
+                    <p id="password-error" class="message" role="alert" hidden></p>
+                </div>
+
+                <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
+                <p id="account-disabled-message" class="message" role="status" hidden></p>
+                <button id="reactivate-account" class="reactivate-account" type="button" hidden>Re-enable account</button>
+                <input type="submit" value="Login">
+                <p class="account-text">Don't have an account? <a href="signup.html" class="create-account">Create account</a></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="account-store.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

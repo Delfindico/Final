@@ -1,0 +1,297 @@
+        :root {
+            color-scheme: light;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #101016;
+            background: #d68de2;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 32px 32px 20px 48px;
+        }
+
+        .menu-toggle {
+            position: fixed;
+            z-index: 3;
+            top: 5px;
+            left: 7px;
+            display: grid;
+            width: 40px;
+            gap: 5px;
+            padding: 2px 0;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            height: 4px;
+            border-radius: 4px;
+            background: #171529;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: minmax(260px, 310px) minmax(0, 1fr);
+            gap: 38px;
+            max-width: 1440px;
+            min-height: calc(100vh - 52px);
+            margin: 0 auto;
+        }
+
+        .sidebar,
+        .welcome-card {
+            border: 1px solid #171529;
+            border-radius: 48px;
+        }
+
+        .sidebar {
+            display: flex;
+            min-height: calc(100vh - 52px);
+            flex-direction: column;
+            align-items: center;
+            padding: 25px 10px 6px;
+            background: linear-gradient(145deg, #f1b8f5, #fff 96%);
+            transition: opacity 180ms ease, transform 180ms ease;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 23px;
+        }
+
+        .profile img {
+            display: block;
+            width: 168px;
+            height: 158px;
+            border: 1px solid #555;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            min-width: 112px;
+            padding: 4px 14px;
+            border-radius: 20px;
+            background: #dedede;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .nav-list {
+            display: flex;
+            width: 100%;
+            flex: 1;
+            flex-direction: column;
+            gap: 16px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav-link {
+            display: flex;
+            min-height: 33px;
+            align-items: center;
+            gap: 9px;
+            color: #101016;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .nav-link > span:last-child {
+            display: block;
+            flex: 1;
+            padding: 7px 13px;
+            border-radius: 22px;
+            background: #d9d9d9;
+        }
+
+        .nav-link:hover > span:last-child,
+        .nav-link:focus-visible > span:last-child {
+            background: #c9e6ff;
+        }
+
+        .nav-link--messages:hover > span:last-child {
+            background: #d9d9d9;
+        }
+
+        .nav-link--current > span:last-child {
+            background: #c9e6ff;
+        }
+
+        .middleman-ticket-nav-item {
+            margin: -8px 0 0 43px;
+        }
+
+        .middleman-ticket-nav-link {
+            font-size: 0.9rem;
+        }
+
+        .middleman-ticket-nav-link .nav-icon {
+            width: 29px;
+            flex-basis: 29px;
+            font-size: 1.15rem;
+        }
+
+        .nav-icon {
+            display: grid;
+            width: 40px;
+            flex: 0 0 40px;
+            place-items: center;
+            color: #20233a;
+        }
+
+        .nav-icon svg {
+            width: 34px;
+            height: 34px;
+            fill: currentColor;
+        }
+
+        .subnav {
+            display: grid;
+            gap: 9px;
+            margin: 9px 0 0 43px;
+        }
+
+        .subnav a {
+            width: fit-content;
+            min-width: 110px;
+            padding: 3px 14px;
+            border-radius: 20px;
+            background: #d9d9d9;
+            color: inherit;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .subnav a:hover,
+        .subnav a:focus-visible {
+            background: #c9e6ff;
+        }
+
+        .subnav a::before {
+            content: "↪";
+            margin-right: 7px;
+            color: #079bea;
+            font-size: 20px;
+            line-height: 0;
+        }
+
+        .nav-link--footer {
+            margin-top: auto;
+        }
+
+        .welcome-card {
+            min-height: calc(100vh - 52px);
+            padding: 22px clamp(28px, 4.3vw, 64px) 42px;
+            border-radius: 78px;
+            background: #f7e0f5;
+        }
+
+        .brand-logo {
+            display: block;
+            width: 190px;
+            height: 112px;
+            margin: 0 auto 1px;
+            object-fit: contain;
+        }
+
+        .welcome-title {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin: 0 0 34px;
+            font-size: clamp(1.65rem, 3vw, 2.15rem);
+            line-height: 1.15;
+        }
+
+        .welcome-title .sparkle {
+            color: #ffbf00;
+            font-size: 1.35rem;
+        }
+
+        .brand-gradient {
+            background: linear-gradient(90deg, #d68de2, #079bea);
+            background-clip: text;
+            color: transparent;
+        }
+
+        .welcome-copy {
+            max-width: 760px;
+            font-size: clamp(1.15rem, 2.55vw, 1.65rem);
+            line-height: 1.23;
+        }
+
+        .welcome-copy p {
+            margin: 0 0 30px;
+        }
+
+        .sidebar.is-hidden {
+            display: none;
+        }
+
+        .dashboard.sidebar-hidden {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        @media (max-width: 760px) {
+            body {
+                padding: 54px 14px 14px;
+            }
+
+            .dashboard {
+                display: flex;
+                min-height: 0;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .sidebar {
+                min-height: 0;
+                padding: 20px 12px;
+                border-radius: 34px;
+            }
+
+            .nav-list {
+                gap: 12px;
+            }
+
+            .nav-link--footer {
+                margin-top: 0;
+            }
+
+            .welcome-card {
+                min-height: 0;
+                padding: 15px 24px 24px;
+                border-radius: 40px;
+            }
+
+            .brand-logo {
+                height: 90px;
+            }
+
+            .welcome-title {
+                margin-bottom: 24px;
+            }
+
+            .welcome-copy p {
+                margin-bottom: 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }

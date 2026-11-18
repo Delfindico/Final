@@ -1,0 +1,164 @@
+.completed-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    padding: 24px 10px 24px;
+    border-radius: 78px;
+}
+
+.deal-list {
+    display: grid;
+    align-content: start;
+    gap: 10px;
+    padding: 0;
+}
+
+.completed-status {
+    margin: 0;
+    color: #a2253e;
+    font-size: 0.9rem;
+}
+
+.completed-status:empty {
+    display: none;
+}
+
+.deal {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    align-items: start;
+    gap: 8px;
+    max-width: 325px;
+}
+
+.deal-brand {
+    display: grid;
+    width: 58px;
+    height: 58px;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #100916;
+}
+
+.deal-brand img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.deal-content {
+    min-width: 0;
+}
+
+.deal-sender {
+    display: flex;
+    width: fit-content;
+    min-width: 106px;
+    min-height: 25px;
+    align-items: center;
+    margin: 11px 0 5px;
+    padding: 3px 18px;
+    border-radius: 20px;
+    background: #fff;
+    color: #ce66d5;
+    font-size: 0.78rem;
+}
+
+.deal-details {
+    width: fit-content;
+    max-width: 100%;
+    padding: 7px 5px;
+    border-radius: 7px;
+    background: #60a9e8;
+    color: #fff;
+    font-size: 0.73rem;
+    line-height: 1.28;
+}
+
+.deal-title {
+    display: inline-block;
+    margin: 0 0 4px;
+    padding: 2px 4px;
+    background: #12f31a;
+    color: #111;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.88rem;
+    line-height: 1.1;
+}
+
+.deal--sol .deal-title {
+    background: #7051c8;
+    color: #fff;
+}
+
+.deal--btc .deal-title {
+    background: #fffbd4;
+    color: #111;
+}
+
+.deal-details p {
+    margin: 0;
+}
+
+.deal-ticket-id {
+    margin-top: 5px !important;
+    font-weight: 700;
+}
+
+.deal-label {
+    display: block;
+    margin-top: 5px;
+    padding: 1px 12px;
+    border-radius: 12px;
+    background: #0756ff;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.deal-person {
+    display: block;
+    width: fit-content;
+    min-width: 72px;
+    margin-top: 3px;
+    padding: 1px 6px;
+    border-radius: 12px;
+    background: #fff;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+.deal-label--receiver {
+    margin-top: 4px;
+    background: #f32222;
+}
+
+.deal-list:empty::after {
+    content: "No completed deals yet.";
+    padding: 16px;
+    color: #4a3d4d;
+    font-size: 1rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+@media (max-width: 760px) {
+    .completed-panel {
+        min-height: 65vh;
+        padding: 18px;
+        border-radius: 40px;
+    }
+
+    .deal {
+        max-width: 100%;
+    }
+}

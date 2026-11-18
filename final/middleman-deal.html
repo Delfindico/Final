@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d68de2">
+    <title>Middleman Deal Room | MidLink</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="burger.css">
+    <link rel="stylesheet" href="middleman-deal.css">
+</head>
+<body>
+    <button class="menu-toggle" type="button" aria-label="Hide sidebar" aria-controls="sidebar" aria-expanded="true">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <main class="dashboard" id="dashboard">
+        <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+            <div class="profile">
+                <img src="anya.webp" alt="Anya Forger profile picture">
+                <span class="profile-name">Anya Forger</span>
+            </div>
+            <nav aria-label="Dashboard">
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="dashboard.html"><span class="nav-icon" aria-hidden="true">⌂</span><span>Home</span></a></li>
+                    <li><a class="nav-link" href="rules.html"><span class="nav-icon" aria-hidden="true">ⓘ</span><span>Rules!</span></a></li>
+                    <li><a class="nav-link" href="support.html"><span class="nav-icon" aria-hidden="true">?</span><span>Support</span></a></li>
+                    <li>
+                        <a class="nav-link nav-link--messages" href="#messages"><span class="nav-icon" aria-hidden="true">◉</span><span>Messages</span></a>
+                        <div class="subnav"><a href="chat.html">Chats</a><a href="globalchat.html">Global chat</a></div>
+                    </li>
+                    <li><a class="nav-link nav-link--current" href="midleman.html" aria-current="page"><span class="nav-icon" aria-hidden="true">◆</span><span>Middleman request</span></a></li>
+                    <li class="nav-link--footer"><a class="nav-link" href="completed.html"><span class="nav-icon" aria-hidden="true">✓</span><span>Completed</span></a></li>
+                    <li><a class="nav-link" href="feedback.html"><span class="nav-icon" aria-hidden="true">♡</span><span>Feedback</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="welcome-card deal-room-card" aria-labelledby="deal-room-title">
+            <header class="deal-room-header">
+                <div class="deal-room-mark" aria-hidden="true">✦</div>
+                <div>
+                    <p class="deal-room-eyebrow">MIDLINK MIDDLEMAN</p>
+                    <h1 id="deal-room-title">Loading ticket…</h1>
+                    <p class="deal-room-participants" id="deal-room-participants"></p>
+                </div>
+                <button class="deal-close-button" id="close-deal" type="button">Close ticket</button>
+            </header>
+
+            <div class="demo-banner" role="note">
+                <strong>Local simulation only.</strong> No real cryptocurrency is transferred or held. Wallets, payment addresses, QR codes, and live member messages are not connected.
+            </div>
+
+            <div class="deal-chat" aria-label="Middleman instructions">
+                <article class="deal-message">
+                    <div class="message-avatar" aria-hidden="true">M</div>
+                    <div class="message-bubble">
+                        <p class="message-sender">MidLink</p>
+                        <h2>Select your role</h2>
+                        <p>Choose whether you are the sender or receiver for this deal. The middleman will guide the steps.</p>
+                        <div class="role-buttons" role="group" aria-label="Choose your role">
+                            <button class="role-button" type="button" data-role="sender" aria-pressed="false">Sender</button>
+                            <button class="role-button" type="button" data-role="receiver" aria-pressed="false">Receiver</button>
+                            <button class="role-reset" id="reset-role" type="button">Reset</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="deal-message">
+                    <div class="message-avatar" aria-hidden="true">M</div>
+                    <div class="message-bubble">
+                        <p class="message-sender">MidLink</p>
+                        <h2>Confirm Deal Amount</h2>
+                        <p>Both sides should agree on the amount before continuing. Confirmations here are simulated on this device.</p>
+                        <form class="amount-form" id="amount-form">
+                            <label for="deal-amount">Amount (<span id="amount-coin">coin</span>)</label>
+                            <input id="deal-amount" name="amount" type="number" min="0.00000001" step="any" inputmode="decimal" required>
+                            <button class="deal-action-button" id="confirm-amount" type="submit">Confirm as selected role</button>
+                        </form>
+                        <p class="deal-step-status" id="amount-status" role="status" aria-live="polite"></p>
+                        <button class="deal-action-button" id="confirm-other" type="button" hidden>Simulate other member confirmation</button>
+                    </div>
+                </article>
+
+                <article class="deal-message">
+                    <div class="message-avatar" aria-hidden="true">M</div>
+                    <div class="message-bubble">
+                        <p class="message-sender">MidLink</p>
+                        <h2>Payment instructions</h2>
+                        <p id="payment-instruction">After both confirmations, continue to the simulated payment steps.</p>
+                        <p class="payment-safety">A live payment address or QR code must come from a verified escrow service. This page does not generate either or accept funds.</p>
+                        <button class="deal-action-button" id="begin-demo" type="button" hidden>Continue deal flow</button>
+                        <div class="demo-payment-steps" id="demo-payment-steps" hidden>
+                            <p id="demo-payment-status"></p>
+                            <button class="deal-action-button" id="simulate-payment" type="button" hidden>Simulate sender payment</button>
+                            <button class="deal-action-button" id="simulate-receipt" type="button" hidden>Simulate receiver confirmation</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <button class="done-deal-button" id="done-deal" type="button" hidden>Done Deal</button>
+            <p class="deal-room-status" id="deal-room-status" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+    <script src="account-store.js"></script>
+    <script src="burger.js"></script>
+    <script src="middleman-deal.js"></script>
+</body>
+</html>

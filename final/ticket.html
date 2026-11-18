@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d68de2">
+    <title>Support Ticket | MidLink</title>
+    <link rel="stylesheet" href="ticket.css">
+</head>
+<body>
+    <main class="ticket-page">
+        <a class="ticket-back-link" href="support.html">Back to Support</a>
+        <section class="ticket-panel" aria-labelledby="ticket-title">
+            <header class="ticket-header">
+                <div>
+                    <p class="ticket-eyebrow">MidLink Support</p>
+                    <h1 id="ticket-title">Support Ticket</h1>
+                    <p>Complete the ticket details or close this ticket.</p>
+                </div>
+                <span class="ticket-open-status" id="ticket-open-status">Open</span>
+            </header>
+
+            <button class="ticket-close-button" id="close-ticket" type="button">Close ticket</button>
+
+            <form class="ticket-details-form" id="ticket-details-form">
+                <h2>Ticket details</h2>
+                <label for="ticket-name">Your name</label>
+                <input id="ticket-name" name="name" type="text" maxlength="50" autocomplete="name" required>
+
+                <label for="ticket-email">Your email</label>
+                <input id="ticket-email" name="email" type="email" autocomplete="email" required>
+
+                <label for="ticket-topic">Issue type</label>
+                <select id="ticket-topic" name="topic" required>
+                    <option value="">Choose an issue</option>
+                    <option value="Account help">Account help</option>
+                    <option value="Deal or payment">Deal or payment</option>
+                    <option value="Technical issue">Technical issue</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="ticket-description">Describe your issue</label>
+                <textarea id="ticket-description" name="description" rows="5" maxlength="2000" required></textarea>
+                <button class="ticket-submit-button" type="submit">Submit ticket details</button>
+            </form>
+
+            <section class="ticket-details-summary" id="ticket-details-summary" hidden aria-labelledby="ticket-details-title">
+                <h2 id="ticket-details-title">Ticket details submitted</h2>
+                <p id="ticket-summary-name"></p>
+                <p id="ticket-summary-email"></p>
+                <p id="ticket-summary-topic"></p>
+                <p id="ticket-summary-description"></p>
+            </section>
+
+            <div class="ticket-messages" id="ticket-messages" role="log" aria-live="polite" hidden></div>
+            <div class="ticket-composer" id="ticket-composer" hidden>
+                <label class="visually-hidden" for="ticket-message">Write a message</label>
+                <textarea id="ticket-message" rows="3" maxlength="2000" placeholder="Write a message..."></textarea>
+                <button id="send-ticket-message" type="button">Send</button>
+            </div>
+            <p class="ticket-note">Ticket details and messages are saved in this browser. Staff replies need a database connection.</p>
+            <p class="ticket-status" id="ticket-status" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+    <script src="support-store.js"></script>
+    <script src="ticket.js"></script>
+</body>
+</html>
